@@ -51,16 +51,16 @@ function renderPlans(plans) {
 function createCard(plan) {
   const card = document.createElement('div');
   const priceOld = plan.amount_html ? plan.amount_html.slice(0, 5) : null;
+  const period = priceOld ? '/mo' : '/per year';
   
-
   card.className = 'plan';
   card.innerHTML = `
     <div class="plan__pricing">
       ${plan.is_best ? '<div class="is-best">Best value</div>' : ''}
       ${plan.price_key === '50%' ? `<div class="card__badge">${cardBadge}</div>` : ''}
-      <span class="plan__pricing-amount">${plan.amount}</span>
+      <span class="plan__pricing-amount">$${plan.amount}</span>
       ${priceOld ? `<span class="plan__pricing-old">${priceOld}</span>` : ''}
-      ${priceOld ? '/mo' : '/per year'}
+      ${period}
     </div>
 
     <div class="plan__name">
