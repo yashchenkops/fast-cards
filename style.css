@@ -141,6 +141,17 @@ body {
   font-size: 48px;
 }
 
+.plan__pricing-old {
+  font-family: var(--primary-font);
+  position: absolute;
+  left: 50%;
+  bottom: 5px;
+  transform: translateX(-50%);
+  color: #929292;
+  font-size: 16px;
+  text-decoration: line-through;
+}
+
 .plan__name {
   font-weight: 400;
   font-size: 18px;
