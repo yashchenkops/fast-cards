@@ -192,7 +192,7 @@ body {
 }
 
 .download-arrow {
-  position: absolute;
+  position: fixed;
   top: 53px;
   right: 0;
   background-color: #3683f7;

@@ -1,4 +1,5 @@
 const container = document.querySelector('.plans');
+const arrow = document.querySelector('.download-arrow');
 
 fetchPlans().then(renderPlans);
 
@@ -40,4 +41,34 @@ async function fetchPlans() {
   const data = await response.json();
 
   return data.result.elements;
+}
+
+document.addEventListener('click', function (e) {
+  const btn = e.target.closest('a.plan__actions-download');
+  if (!btn) return;
+
+  e.preventDefault();
+
+  window.open(btn.href, '_blank');
+
+  setTimeout(showDownloadArrow, 400);
+});
+
+function showDownloadArrow() {
+  if (!arrow) return;
+
+  arrow.classList.add('is-visible');
+
+  if (getBrowser() === 'firefox') {
+    arrow.classList.add('download-arrow--firefox');
+  }
+}
+
+function getBrowser() {
+  const browser = navigator.userAgent;
+
+  if (browser.includes('Firefox')) return 'firefox';
+  if (browser.includes('Chrome')) return 'chrome';
+
+  return 'other';
 }
