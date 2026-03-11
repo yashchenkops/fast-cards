@@ -202,6 +202,8 @@ body {
   padding: 10px;
   color: #fff;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  visibility: hidden;
   z-index: 100;
 }
 
@@ -217,6 +219,12 @@ body {
   background-size: contain;
 }
 
+.download-arrow.is-visible {
+  opacity: 1;
+  visibility: visible;
+  animation: arrowMove 1s infinite alternate;
+}
+
 .download-arrow__title {
   font-family: var(--secondary-font);
   font-size: 72px;
@@ -230,7 +238,7 @@ body {
 .download-arrow.download-arrow--firefox {
   top: auto;
   right: auto;
-  bottom: 53px;
+  bottom: 63px;
   left: 0;
 }
 
@@ -238,6 +246,12 @@ body {
   rotate: 180deg;
   top: auto;
   bottom: -52px;
+}
+
+@keyframes arrowMove {
+  to {
+    translate: 0 10px;
+  }
 }
 
 .footer {
