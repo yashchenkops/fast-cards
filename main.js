@@ -17,6 +17,7 @@ function createCard(plan) {
   card.innerHTML = `
     <div class="plan__pricing">
       ${plan.is_best ? '<div class="is-best">Best value</div>' : ''}
+      ${plan.price_key === "50%" ? `<div class="card__badge">${plan.price_key}</div>` : ''}
       <span class="plan__pricing-amount">$${plan.amount}</span>
       /per year
     </div>
@@ -38,8 +39,13 @@ function createCard(plan) {
 
 async function fetchPlans() {
   const response = await fetch('https://veryfast.io/t/front_test_api.php');
-  const data = await response.json();
+  
+  if (!response.ok) {
+    console.error('API error');
+    return [];
+  }
 
+  const data = await response.json();
   return data.result.elements;
 }
 
