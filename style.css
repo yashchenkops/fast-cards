@@ -87,10 +87,10 @@ body {
 }
 
 .plans {
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 360px));
   justify-content: center;
-  gap: 30px;
+  gap: 80px 30px;
 }
 
 .plan {
@@ -282,4 +282,32 @@ body {
   font-weight: 400;
   font-size: 14px;
   line-height: 1.9;
+}
+
+
+@media (max-width: 768px) {
+  .header__logo {
+    font-size: 16px;
+  }
+
+  .header__logo::before {
+    height: 25px;
+    top: -4px;
+    left: 125px;
+  }
+
+  .main__inner {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .section__title {
+    font-size: 32px;
+    margin-bottom: 85px;
+  }
+
+  .plan {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }

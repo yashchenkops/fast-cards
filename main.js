@@ -52,6 +52,7 @@ function createCard(plan) {
   const card = document.createElement('div');
   const priceOld = plan.amount_html ? plan.amount_html.slice(0, 5) : null;
   const period = priceOld ? '/mo' : '/per year';
+  const nameDisplay = plan.name_display;
   
   card.className = 'plan';
   card.innerHTML = `
@@ -64,7 +65,7 @@ function createCard(plan) {
     </div>
 
     <div class="plan__name">
-      <p class="plan__name-prod">${plan.name_display}</p>
+      <p class="plan__name-display">${nameDisplay}</p>
       <p class="plan__name-license">${plan.license_name}</p>
     </div>
 
