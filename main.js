@@ -3,7 +3,7 @@ const container = document.querySelector('.plans');
 fetchPlans().then(renderPlans);
 
 function renderPlans(plans) {
-  plans.forEach(plan => {
+  plans.forEach((plan) => {
     const card = createCard(plan);
     container.append(card);
   });

@@ -7,6 +7,11 @@
   font-weight: normal;
 }
 
+:root {
+  --primary-font: 'Roboto', sans-serif;
+  --secondary-font: 'Bebas Neue', sans-serif;
+}
+
 html,
 body {
   height: 100%;
@@ -19,7 +24,7 @@ a {
 body {
   display: grid;
   grid-template-rows: auto 1fr auto;
-  font-family: 'Roboto', sans-serif;
+  font-family: var(--primary-font);
   background-color: #fbfbfb;
   color: #000;
 }
@@ -61,15 +66,20 @@ body {
 }
 
 .section__title {
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: var(--secondary-font);
   font-weight: 500;
   font-size: 48px;
   text-transform: uppercase;
   text-align: center;
 }
 
+.main {
+  position: relative;
+}
+
 .main__inner {
-  padding-top: 151px;
+  padding-top: 150px;
+  padding-bottom: 150px;
 }
 
 .section__title {
@@ -96,7 +106,7 @@ body {
   left: 50%;
   top: -50px;
   translate: -50% 0;
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: var(--secondary-font);
   font-size: 18px;
   line-height: 1;
   text-align: center;
@@ -108,7 +118,7 @@ body {
 }
 
 .is-best {
-  font-family: 'Roboto', sans-serif;
+  font-family: var(--primary-font);
   position: absolute;
   top: 0;
   right: 0;
@@ -179,6 +189,55 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
   z-index: 1;
+}
+
+.download-arrow {
+  position: absolute;
+  top: 53px;
+  right: 0;
+  background-color: #3683f7;
+  width: 160px;
+  height: 135px;
+  text-align: center;
+  padding: 10px;
+  color: #fff;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  z-index: 100;
+}
+
+.download-arrow::before {
+  content: '';
+  position: absolute;
+  top: -52px;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYwIiBoZWlnaHQ9IjUzIiB2aWV3Qm94PSIwIDAgMTYwIDUzIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNNzkuNjc0MyAwTC0zLjA1MTc2ZS0wNSA1Mi41SDE1OS4zNDlMNzkuNjc0MyAwWiIgZmlsbD0iIzM2ODNGNyIvPgo8L3N2Zz4K');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.download-arrow__title {
+  font-family: var(--secondary-font);
+  font-size: 72px;
+}
+
+.download-arrow__description {
+  font-size: 12px;
+  line-height: 200%;
+}
+
+.download-arrow.download-arrow--firefox {
+  top: auto;
+  right: auto;
+  bottom: 53px;
+  left: 0;
+}
+
+.download-arrow.download-arrow--firefox::before {
+  rotate: 180deg;
+  top: auto;
+  bottom: -52px;
 }
 
 .footer {
