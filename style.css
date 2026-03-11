@@ -76,14 +76,14 @@ body {
   margin-bottom: 106px;
 }
 
-.items {
+.plans {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 30px;
 }
 
-.card {
+.plan {
   position: relative;
   background-color: #f3f5f6;
   padding: 71px 60px 26px;
@@ -91,7 +91,7 @@ body {
   width: 100%;
 }
 
-.card__pricing {
+.plan__pricing {
   position: absolute;
   left: 50%;
   top: -50px;
@@ -127,11 +127,11 @@ body {
   left: -14px;
 }
 
-.card__pricing-amount {
+.plan__pricing-amount {
   font-size: 48px;
 }
 
-.card__name {
+.plan__name {
   font-weight: 400;
   font-size: 18px;
   text-align: center;
@@ -139,15 +139,15 @@ body {
   margin-bottom: 31px;
 }
 
-.card__name-license {
+.plan__name-license {
   font-weight: 700;
 }
 
-.card__actions {
+.plan__actions {
   text-align: center;
 }
 
-.card__actions-download {
+.plan__actions-download {
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -164,11 +164,11 @@ body {
   border-radius: 50px;
 }
 
-.card__actions-download:hover {
+.plan__actions-download:hover {
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
 
-.card__actions-download::after {
+.plan__actions-download::after {
   content: '';
   position: absolute;
   top: 10px;

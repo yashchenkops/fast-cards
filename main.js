@@ -1,19 +1,32 @@
+const container = document.querySelector('.plans');
+
+fetchPlans().then(renderPlans);
+
+function renderPlans(plans) {
+  plans.forEach(plan => {
+    const card = createCard(plan);
+    container.append(card);
+  });
+}
+
 function createCard(plan) {
   const card = document.createElement('div');
 
-  card.className = 'card';
+  card.className = 'plan';
   card.innerHTML = `
-    <div class="card__pricing">
+    <div class="plan__pricing">
       ${plan.is_best ? '<div class="is-best">Best value</div>' : ''}
-      <span class="card__pricing-amount">$${plan.amount}</span>
+      <span class="plan__pricing-amount">$${plan.amount}</span>
       /per year
     </div>
-    <div class="card__name">
-      <p class="card__name-prod">${plan.name_prod}</p>
-      <p class="card__name-license">${plan.license_name}</p>
+
+    <div class="plan__name">
+      <p class="plan__name-prod">${plan.name_prod}</p>
+      <p class="plan__name-license">${plan.license_name}</p>
     </div>
-    <div class="card__actions">
-      <a class="card__actions-download" href="${plan.link}">
+
+    <div class="plan__actions">
+      <a class="plan__actions-download" href="${plan.link}">
         Download
       </a>
     </div>
@@ -28,12 +41,3 @@ async function fetchPlans() {
 
   return data.result.elements;
 }
-
-fetchPlans().then((plans) => {
-  const container = document.querySelector('.items');
-
-  plans.forEach((plan) => {
-    const card = createCard(plan);
-    container.append(card);
-  });
-});
